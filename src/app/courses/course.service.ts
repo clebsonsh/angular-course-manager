@@ -18,6 +18,14 @@ export class CourseService {
     );
   }
 
+  save(course: Course): void {
+    const index = COURSES.findIndex((courseInterator: Course) => {
+      return courseInterator.id === course.id;
+    })
+
+    COURSES[index] = course;
+  }
+
 }
 
 const COURSES: Course[] = [
