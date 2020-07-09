@@ -5,18 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
-import { Error404Component } from './error-404/error-404.component';
-
 import { CoreModule } from './core/core.module';
 import { CourseModule } from './courses/course.modele';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Error404Component,
   ],
   imports: [
-    CoreModule,
     CourseModule,
     BrowserModule,
     HttpClientModule,
@@ -25,12 +21,10 @@ import { CourseModule } from './courses/course.modele';
         path: '',
         redirectTo: 'courses',
         pathMatch: 'full'
-      },
-      {
-        path: '**',
-        component: Error404Component
       }
-    ])
+    ]),
+    CoreModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
